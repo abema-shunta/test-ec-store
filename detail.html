@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta http-equiv="content-language" content="ja">
+    <title> ec-concier テスト </title>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+      header {
+        height: 60px;
+        background: #333;
+        text-align: center;
+        color: white;
+        line-height: 60px;
+        letter-spacing: 5px;
+        font-weight: bold;
+      }
+      section {
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+        background: #EEE;
+        text-align: center;
+      }
+      h1{
+        text-align: center;
+        margin: 0px ;
+        padding: 10px;
+      }
+      ul{
+        list-style: none;
+        display: inline-block;
+        padding: 10px;
+        margin: 0px auto;
+      }
+      li{
+        width: 100px;
+        height: 160px;
+        background: ;
+        border-width: 1px 1px 2px;
+        border-style: solid;
+        border-color: #999;
+        line-height: 160px;
+        box-sizing: border-box;
+        float: left;
+        margin: 10px;
+        font-size: 3em;
+        background: #FFF;
+      }
+    </style>
+    <script type="text/javascript">
+      (function(w,d,s,p,v,e,r) {w['$igniter_var']=v;w[v]=w[v]||function(){(w[v].q=w[v].q||[]).push(
+      arguments)};w[v].l=1*new Date();e=d.createElement(s),r=d.getElementsByTagName(s)[0];e.async=1;
+      e.src=p+'?ts='+(+new Date()/3600000|0);
+      r.parentNode.insertBefore(e,r)})(window,document,'script','//cdn.petametrics.com/r0j6ktjjhdn0q1dv.js','$p');
+
+      $p("init", "r0j6ktjjhdn0q1dv");
+      $p("send", "pageview");
+    </script>
+  </head>
+  <body>
+    <header>
+      <div id="logo"> TEST-EC </div>
+    </header>
+    <section>
+      <h1> ITEM LIST </h1>
+      <ul>
+        <li id="item"> A </li>
+      </ul>
+      <br/>
+      <a id="buy" href="goal.html"> Buy This </a><br/>
+      <a id="buy" href="index.html"> Back To List </a>
+    </section>
+    <footer>
+      Cart = ¥2000
+    </footer>
+    <script>
+      var getUrlVars = function(){
+        var vars = {};
+        var param = location.search.substring(1).split('&');
+        for(var i = 0; i < param.length; i++) {
+            var keySearch = param[i].search(/=/);
+            var key = '';
+            if(keySearch != -1) key = param[i].slice(0, keySearch);
+            var val = param[i].slice(param[i].indexOf('=', 0) + 1);
+            if(key != '') vars[key] = decodeURI(val);
+        }
+        return vars;
+      }
+      var i = getUrlVars()
+      if(i != {}){
+        document.querySelector("#item").textContent = i.id
+      }
+    </script>
+    
+    <script>
+    (function(w,d,url,a,s,e){
+        w[a]= (w[a]||[]);
+        s = d.getElementsByTagName("script")[0];e = d.createElement("script");e.src=url;e.async=1;s.parentNode.insertBefore(e,s);
+    })(window,document,'//localhost:3000/a107c836d96043ea/analytics.js','ara');
+    ara.push(['init', 'a107c836d96043ea']);
+    </script>
+
+  </body>
+</html>
